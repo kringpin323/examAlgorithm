@@ -43,6 +43,7 @@ public class testCollection {
 		SortedSet<Item> sortByDescription = new TreeSet<>(comp);
 		SortedSet<ItemCom> sortInt = new TreeSet<>();
 		sortInt.add(ic1);
+		
 		sortInt.add(ic2);
 		
 		

@@ -46,6 +46,7 @@ public class testLog {
 	}
 	
 	@Test
+	
 	public void tstSysErr(){
 		// 这是一个失败的尝试
 		PrintStream out = new PrintStream(new ByteArrayOutputStream());

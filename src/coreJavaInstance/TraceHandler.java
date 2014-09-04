@@ -21,6 +21,7 @@ public class TraceHandler implements InvocationHandler{
 		System.out.print(target);
 		System.out.print("."+method.getName()+"(");
 		if(args != null){
+			
 			for(int i=0;i<args.length;i++){
 				System.out.print(args[i]);
 				if(i<args.length-1) System.out.print(", ");

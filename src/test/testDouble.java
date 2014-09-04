@@ -35,6 +35,7 @@ public class testDouble {
 	@Test
 	public void tstInnerclass(){
 		// 貌似这个InnerClass也没什么特别
+		
 		double[] d = new double[20];
 		for(int i=0;i<d.length;i++){
 			d[i] = 100 * Math.random();

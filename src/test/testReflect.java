@@ -18,6 +18,7 @@ public class testReflect {
 			InvocationHandler handle = new TraceHandler(value);
 			Object proxy = Proxy.newProxyInstance(null, new Class[]{Comparable.class}, handle);
 			elements[i] = proxy;
+			
 		}
 		
 		// 0 和 指定值（这里是elements.length，不包括）之间的随机值，现在应该是 1 到 elements.length

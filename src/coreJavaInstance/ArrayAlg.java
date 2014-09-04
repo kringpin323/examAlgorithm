@@ -9,6 +9,7 @@ public class ArrayAlg {
 			return first;
 		}
 
+		
 		public double getSecond() {
 			return second;
 		}
