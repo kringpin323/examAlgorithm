@@ -21,6 +21,8 @@ public class binaTree {
 		
 		ll.push(first);
 		
+		System.out.println("hello world");
+		
 		
 		
 		
