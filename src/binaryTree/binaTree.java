@@ -26,8 +26,8 @@ public class binaTree {
 		System.out.println("hello world");
 		// test for modify in github
 		
-		
-		
+		System.out.print("hello Github!");
+		System.out.println("但愿我22岁生日能送自己一份大礼物，谢谢");
 	}
 	
 }
