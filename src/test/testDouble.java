@@ -19,6 +19,7 @@ public class testDouble {
 //		}
 		// hello world
 		
+		
 		/**
 		 * 这里输出时 0.8999999999999999
 		 * */
