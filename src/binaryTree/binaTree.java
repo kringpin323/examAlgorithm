@@ -32,6 +32,46 @@ public class binaTree {
 		}
 	}
 	
+	/**
+	 * 循环 中序遍历，借助stack实现
+	 * 学习link：http://www.cnblogs.com/dolphin0520/archive/2011/08/25/2153720.html
+	 * */
+	public static void midOrderLoop(TreeNode tn,LinkedList<TreeNode> stack){
+		TreeNode temp = tn;
+		while(temp!=null || stack.size()!=0){
+			while(temp!=null){
+				stack.push(temp);
+				temp = temp.left;
+			}
+			if(stack.size()!=0){
+				temp = stack.peek();
+				System.out.print(temp.key+" ");
+				stack.pop();
+				temp = temp.right;
+				
+			}
+		}
+	}
+	
+	/**
+	 * 循环 后序遍历，借助stack实现
+	 * 学习link：http://www.cnblogs.com/dolphin0520/archive/2011/08/25/2153720.html
+	 * */
+	public static void lastOrderLoop(TreeNode tn,LinkedList<TreeNode> stack){
+		TreeNode temp = tn;
+		while(temp!=null || stack.size()!=0){
+			while(temp!=null){
+				stack.push(temp);
+				temp = temp.left;
+			}
+			if(stack.size()!=0){
+				temp = stack.peek();
+				stack.pop();
+				temp = temp.right;
+			}
+		}
+	}
+	
 	public static void midOrder(TreeNode tn){
 		if(tn != null){
 			midOrder(tn.left);
@@ -84,5 +124,4 @@ public class binaTree {
 		buildTree(A,1,root);
 		return root;
 	}
-	
 }
