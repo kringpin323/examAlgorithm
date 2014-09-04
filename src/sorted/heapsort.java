@@ -37,15 +37,15 @@ public class heapsort {
 		}
 	}
 	
-	static int parent(int i){
+	public static int parent(int i){
 		return i/2;
 	}
 	
-	static int right(int i){
+	public static int right(int i){
 		return 2*i+1;
 	}
 	
-	static int left(int i){
+	public static int left(int i){
 		return 2*i;
 	}
 }
