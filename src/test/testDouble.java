@@ -17,6 +17,7 @@ public class testDouble {
 			System.out.println("Double.isNaN(db) ");
 //		if(abc == Double.NaN){
 //		}
+		// hello world
 		/**
 		 * 这里输出时 0.8999999999999999
 		 * */
