@@ -69,11 +69,21 @@ public class testThread {
 	public void tstBank(){
 		Bank bank = new Bank();
 		
-		Thread th23 = new Thread(new TransferRunnable(23,bank));
-		Thread th50 = new Thread(new TransferRunnable(50,bank));
+		Thread th23 = new Thread(new TransferRunnable(bank,23,40));
+		Thread th50 = new Thread(new TransferRunnable(bank,50,40));
 		
 		th23.start();
 		th50.start();
+		
+		try{
+			Thread.sleep(1000);
+		}
+		catch(Exception ex){
+		}
+			
+		System.out.printf("23: %10.2f%n",bank.accounts[23]);
+		System.out.printf("50: %10.2f%n",bank.accounts[50]);		
+		System.out.printf("40: %10.2f%n",bank.accounts[40]);
 		
 		while(true){
 			try{
@@ -81,7 +91,47 @@ public class testThread {
 			}catch(Exception ex){
 				ex.printStackTrace();
 			}
+		}
+	}
+
+	@Test
+	public void tstBankSyc(){
+		Bank bank = new Bank();
+		
+		System.out.println("我觉得testmethod不会运行");
+		Thread ab1 = new Thread(new Runnable(){
+			Bank bank;
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				bank.testmethod1();
+			}
 			
+		});
+		Thread ab2 = new Thread(new Runnable(){
+			Bank bank;
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				bank.testmethod2();
+			}
+			
+		});
+
+		ab1.start();
+		ab2.start();
+		
+		System.out.println("如果主线程没有柱塞会出来的");
+		
+		
+		
+		
+		while(true){
+			try{
+				Thread.currentThread().sleep(100000000);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
 		}
 	}
 }
