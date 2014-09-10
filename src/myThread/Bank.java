@@ -64,6 +64,40 @@ public class Bank {
 		}
 	}
 	
+	/**
+	 * 通过以下实验我们知道 对于 static method 也是需要 synchronized
+	 * 当两个线程 共同使用 static 关键字的时候可以并发执行，
+	 * synchronized 的 static 关键字的时候，由于 只有一个 class类，class类的class对象的锁只有一个，所以
+	 * 发生了 race condition
+	 * 
+	 * 这里的理论说明和原则请参见：Java线程 第三章 P56
+	 * */
+	public static void testStaticMethod1(){
+//	public synchronized static void testStaticMethod1(){
+		try{
+			System.out.println("testStaticMethod1：原来非同步的static也需要用class对象的锁");
+			System.out.println(Thread.currentThread()+" 锁没释放@@@@1");
+			Thread.currentThread().sleep(1000000000);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		finally{
+		}
+	}
+	
+	public static void testStaticMethod2(){
+//	public synchronized static void testStaticMethod2(){
+		try{
+			System.out.println("testStaticMethod2：原来非同步的static也需要用class对象的锁");
+			System.out.println(Thread.currentThread()+" 锁没释放@@@@2");
+			Thread.currentThread().sleep(1000000000);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		finally{
+		}
+	}
+	
 	public synchronized void testmethod2(){
 //		bankLock.lock();
 		

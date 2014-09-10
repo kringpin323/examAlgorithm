@@ -120,10 +120,11 @@ public class testThread {
 		public void run() {
 			// TODO Auto-generated method stub
 			//			bank.testmethod1();
-			String dateStamp = bank.dateFormat.get().format(new Date());
-			System.out.println("tstTh1: "+dateStamp);
-			String dateStampNotLocal = bank.dataFormatNotLocal.format(new Date());
-			System.out.println("tstTh1: dateStampNotLocal: "+dateStampNotLocal);
+			Bank.testStaticMethod1();
+//			String dateStamp = bank.dateFormat.get().format(new Date());
+//			System.out.println("tstTh1: "+dateStamp);
+//			String dateStampNotLocal = bank.dataFormatNotLocal.format(new Date());
+//			System.out.println("tstTh1: dateStampNotLocal: "+dateStampNotLocal);
 		}
 	}
 
@@ -136,10 +137,11 @@ public class testThread {
 		public void run() {
 			// TODO Auto-generated method stub
 			//			bank.testmethod2();
-			String dateStamp = bank.dateFormat.get().format(new Date());
-			System.out.println("tstTh2: "+dateStamp);
-			String dateStampNotLocal = bank.dataFormatNotLocal.format(new Date());
-			System.out.println("tstTh2: dateStampNotLocal: "+dateStampNotLocal);
+			Bank.testStaticMethod2();
+//			String dateStamp = bank.dateFormat.get().format(new Date());
+//			System.out.println("tstTh2: "+dateStamp);
+//			String dateStampNotLocal = bank.dataFormatNotLocal.format(new Date());
+//			System.out.println("tstTh2: dateStampNotLocal: "+dateStampNotLocal);
 		}
 	}
 
